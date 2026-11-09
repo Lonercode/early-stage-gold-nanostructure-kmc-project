@@ -10,7 +10,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from coordination import compute_all_cn
 from ase.io import read
 
-SWEEP   = os.path.join(os.path.dirname(__file__), '..', 'sweeps', 'sweep_summary.npy')
+SWEEP   = os.path.join(os.path.dirname(__file__), '..', '..', 'data', 'phase_1', 'phase1_500_300K_sweep_summary.npy')
 OUT     = os.path.join(os.path.dirname(__file__), '..', 'results')
 os.makedirs(OUT, exist_ok=True)
 
@@ -63,7 +63,7 @@ with open(by_seed_path, 'w', newline='') as f:
         ])
 
 # ── 2. per-temperature summary CSV ───────────────────────────────────────────
-summary_path = os.path.join(OUT, 'sweep_results.csv')
+summary_path = os.path.join(OUT, 'phase1_500_300K_sweep_results.csv')
 summary_cols = [
     'T_K',
     'geo_AR_mean', 'geo_AR_std',
